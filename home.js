@@ -7,8 +7,9 @@ const auth = getAuth();
 onAuthStateChanged(auth, (user) => {
   if (user) {
     const uid = user.uid;
+    console.log(uid);
 
   } else {
-   
+    window.location = 'login.html';
   }
 });
