@@ -4,7 +4,7 @@ import {auth} from './config.js'
 const form  = document.querySelector('#form');
 const email  = document.querySelector('#email');
 const password  = document.querySelector('#password');
-
+const display = document.querySelector('#div');
 
 form.addEventListener('submit' , (events) => {
       events.preventDefault();
@@ -14,11 +14,15 @@ form.addEventListener('submit' , (events) => {
         .then((userCredential) => {
           const user = userCredential.user;
 console.log(user);
+display.innerHTML = `Registration Done`;
+email.value = '';
+password.value = '';
         })
         .catch((error) => {
           const errorCode = error.code;
           const errorMessage = error.message;
 console.log(errorMessage);
+display.innerHTML = `${errorMessage}`;
         });
 }
 )
