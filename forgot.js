@@ -24,7 +24,7 @@ sendPasswordResetEmail(auth, email.value)
 .catch((error)=>{
 errorcode = error.code;
 errorMessage = error.message;
-display.innerHTML = `Error Occured: ${errorMessage}`;
+display.innerHTML = `<p>Error Occured: ${errorMessage}</p>`;
 console.log("Error Occured" , errorMessage);
 })
 })
