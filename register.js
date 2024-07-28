@@ -50,9 +50,9 @@ goggle_btn.addEventListener("click", () => {
       const credential = GoogleAuthProvider.credentialFromResult(result);
       const user = result.user;
       console.log(user);
-      window.location.href = "";
+      window.location = "./Home.html";
     })
-    
+
     .catch((error) => {
       const errorCode = error.code;
       const errorMessage = error.message;
@@ -60,3 +60,9 @@ goggle_btn.addEventListener("click", () => {
       display.innerHTML = `${errorMessage}`;
     });
 });
+
+
+// Github Button Work:
+
+
+

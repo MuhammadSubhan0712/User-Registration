@@ -10,19 +10,19 @@ onAuthStateChanged(auth, (user) => {
     console.log(uid);
 
   } else {
-    window.location = 'login.html';
+    window.location = 'index.html';
   }
 });
 
-const logout = document.querySelector('#logout-btn');
+// Logout button Working:
 
+const logout = document.querySelector('#logout-btn');
 
 logout.addEventListener('click' , () =>{
     const auth = getAuth();
 signOut(auth).then(() => {
  console.log('Logout succesfully');
- window.location = 'login.html';
-
+ window.location = 'index.html';
 
 }).catch((error) => {
   console.log(error);
