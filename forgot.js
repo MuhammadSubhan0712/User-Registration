@@ -1,15 +1,12 @@
-import {
-    getAuth,
-    signInWithEmailAndPassword,
-  } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-auth.js";
+import {getAuth, signInWithEmailAndPassword,} from "https://www.gstatic.com/firebasejs/10.12.4/firebase-auth.js";
   import { auth } from "./config.js";
   
 
 const form = document.querySelector('#form');
 
-const email = document.querySelector('email');
-const forgot_btn = document.querySelector('forgot-btn');
-
+const email = document.querySelector('#email');
+const forgot_btn = document.querySelector('#reset-btn');
+ 
 const display = document.querySelector('#div');
 
 form.addEventListener('submit' , (events)=>{
