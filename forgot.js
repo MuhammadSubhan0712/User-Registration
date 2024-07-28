@@ -10,6 +10,21 @@ const form = document.querySelector('forgot-pasword');
 const email = document.querySelector('email');
 const forgot_btn = document.querySelector('forgot-btn');
 
+const display = document.querySelector('div');
 
+form.addEventListener('submit' , (events)=>{
+events.preventDefault();
 
-
+sendPasswordResetEmail(auth, email.value)
+.then((forgot_pass)=>{
+    forgot = forgot_pass;
+    display.innerHTML = `Password reset email sent!.`;
+    console.log(forgot);
+})
+.catch((error)=>{
+errorcode = error.code;
+errorMessage = error.message;
+display.innerHTML = `Error Occured: ${errorMessage}`;
+console.log("Error Occured" , errorMessage);
+})
+})
