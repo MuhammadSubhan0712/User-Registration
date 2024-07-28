@@ -37,14 +37,16 @@ form.addEventListener("submit", (events) => {
 
 
 // Goggle Button Work:
-const app = initializeApp(firebaseConfig);
-const auth = getAuth();
+
 auth.languageCode = "en";
+
+//Calling the GoggleAuthProvider function
 const provider = new GoogleAuthProvider();
 
-const goggle_btn = document.querySelector("goggle-btn");
+const goggle_btn = document.querySelector("#goggle-btn");
 
 goggle_btn.addEventListener("click", () => {
+const auth = getAuth();
   signInWithPopup(auth, provider)
   
     .then((result) => {
@@ -64,11 +66,12 @@ goggle_btn.addEventListener("click", () => {
 
 
 // Github Button Work:
-
 const github_btn = document.querySelector('#github-btn');
-const providers = new GithubAuthProvider();
-github_btn.addEventListener('click' , ()=>{
 
+//Calling the GithubAuthProvider function
+const providers = new GithubAuthProvider();
+
+github_btn.addEventListener('click' , ()=>{
     const auth = getAuth();
     signInWithPopup(auth, providers)
       .then((result) => {

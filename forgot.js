@@ -2,9 +2,11 @@ import {getAuth, signInWithEmailAndPassword,} from "https://www.gstatic.com/fire
   import { auth } from "./config.js";
   
 
+  
 const form = document.querySelector('#form');
 
 const email = document.querySelector('#email');
+
 const forgot_btn = document.querySelector('#reset-btn');
  
 const display = document.querySelector('#div');
