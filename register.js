@@ -4,7 +4,7 @@ import {
   createUserWithEmailAndPassword,
   GoogleAuthProvider,
   signInWithPopup,
-  GithubAuthProvider ,
+  GithubAuthProvider,
 } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-auth.js";
 import { auth } from "./config.js";
 
@@ -66,9 +66,23 @@ goggle_btn.addEventListener("click", () => {
 // Github Button Work:
 
 const github_btn = document.querySelector('#github-btn');
-
+const providers = new GithubAuthProvider();
 github_btn.addEventListener('click' , ()=>{
 
+    const auth = getAuth();
+    signInWithPopup(auth, providers)
+      .then((result) => {
+        const credential = GithubAuthProvider.credentialFromResult(result);
+        const user = result.user;
+        console.log(user);
+      window.location = "./Home.html";
+      
+      }).catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.log("Error Occured:",errorMessage);
+
+      });
 })
 
 
