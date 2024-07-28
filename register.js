@@ -1,58 +1,62 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-app.js";
-import { getAuth, createUserWithEmailAndPassword , GoogleAuthProvider } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-auth.js";
-import {auth} from './config.js'
+import {
+  getAuth,
+  createUserWithEmailAndPassword,
+  GoogleAuthProvider,
+  signInWithPopup,
+} from "https://www.gstatic.com/firebasejs/10.12.4/firebase-auth.js";
+import { auth } from "./config.js";
 
-const form  = document.querySelector('#form');
-const email  = document.querySelector('#email');
-const password  = document.querySelector('#password');
-const display = document.querySelector('#div');
+const form = document.querySelector("#form");
+const email = document.querySelector("#email");
+const password = document.querySelector("#password");
+const display = document.querySelector("#div");
 
-form.addEventListener('submit' , (events) => {
-      events.preventDefault();
+form.addEventListener("submit", (events) => {
+  events.preventDefault();
 
-      const auth = getAuth();
-      createUserWithEmailAndPassword(auth, email.value, password.value)
-        .then((userCredential) => {
-          const user = userCredential.user;
-console.log(user);
-display.innerHTML = `Registration Done`;
-email.value = '';
-password.value = '';
-        })
-        .catch((error) => {
-          const errorCode = error.code;
-          const errorMessage = error.message;
-console.log(errorMessage);
-display.innerHTML = `${errorMessage}`;
-        });
-}
-)
+  const auth = getAuth();
+  createUserWithEmailAndPassword(auth, email.value, password.value)
+
+    .then((userCredential) => {
+      const user = userCredential.user;
+      console.log(user);
+      display.innerHTML = `Registration Done`;
+      email.value = "";
+      password.value = "";
+    })
+
+    .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      console.log(errorMessage);
+      display.innerHTML = `${errorMessage}`;
+    });
+});
 
 
 // Goggle Button Work:
 const app = initializeApp(firebaseConfig);
-const auth  = getAuth();
-auth.languageCode = 'en';
+const auth = getAuth();
+auth.languageCode = "en";
 const provider = new GoogleAuthProvider();
 
+const goggle_btn = document.querySelector("goggle-btn");
 
-const goggle_btn = document.querySelector('goggle-btn');
-
-
-goggle_btn.addEventListener('click' , ()=>{
+goggle_btn.addEventListener("click", () => {
+  signInWithPopup(auth, provider)
+  
+    .then((result) => {
+      const credential = GoogleAuthProvider.credentialFromResult(result);
+      const user = result.user;
+      console.log(user);
+      window.location.href = "";
+    })
     
-    signInWithPopup(auth, provider)
-  .then((result) => {
-    const credential = GoogleAuthProvider.credentialFromResult(result);
-    const user = result.user;
-    console.log(user);
-    window.location.href = "./"
- 
-  })
-  .catch((error) => {
-    const errorCode = error.code;
-    const errorMessage = error.message;
-    console.log("Error Occured",errorMessage);
-    display.innerHTML = `${errorMessage}`
-  });
-})
+    .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      console.log("Error Occured", errorMessage);
+      display.innerHTML = `${errorMessage}`;
+    });
+});
