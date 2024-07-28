@@ -53,7 +53,7 @@ const auth = getAuth();
       const credential = GoogleAuthProvider.credentialFromResult(result);
       const user = result.user;
       console.log(user);
-      window.location = "./Home.html";
+      window.location.href = "../index.html";
     })
 
     .catch((error) => {
@@ -71,16 +71,17 @@ const github_btn = document.querySelector('#github-btn');
 //Calling the GithubAuthProvider function
 const providers = new GithubAuthProvider();
 
-github_btn.addEventListener('click' , ()=>{
+github_btn.addEventListener("click" , ()=>{
     const auth = getAuth();
     signInWithPopup(auth, providers)
       .then((result) => {
         const credential = GithubAuthProvider.credentialFromResult(result);
         const user = result.user;
         console.log(user);
-      window.location = "./Home.html";
+      window.location.href = "../index.html";
       
-      }).catch((error) => {
+      })
+      .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
         console.log("Error Occured:",errorMessage);
