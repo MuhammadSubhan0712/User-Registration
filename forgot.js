@@ -5,12 +5,12 @@ import {
   import { auth } from "./config.js";
   
 
-const form = document.querySelector('forgot-pasword');
+const form = document.querySelector('#form');
 
 const email = document.querySelector('email');
 const forgot_btn = document.querySelector('forgot-btn');
 
-const display = document.querySelector('div');
+const display = document.querySelector('#div');
 
 form.addEventListener('submit' , (events)=>{
 events.preventDefault();
