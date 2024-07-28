@@ -18,7 +18,7 @@ events.preventDefault();
 sendPasswordResetEmail(auth, email.value)
 .then((forgot_pass)=>{
     forgot = forgot_pass;
-    display.innerHTML = `Password reset email sent!.`;
+    display.innerHTML = `<p>Password reset email sent!.</p>`;
     console.log(forgot);
 })
 .catch((error)=>{
