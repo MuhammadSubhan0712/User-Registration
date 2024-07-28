@@ -52,10 +52,7 @@ goggle_btn.addEventListener('click' , ()=>{
   .catch((error) => {
     const errorCode = error.code;
     const errorMessage = error.message;
-    const email = error.customData.email;
-    // The AuthCredential type that was used.
-    const credential = GoogleAuthProvider.credentialFromError(error);
-
+    console.log("Error Occured",errorMessage);
+    display.innerHTML = `${errorMessage}`
   });
-
 })
