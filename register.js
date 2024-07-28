@@ -4,6 +4,7 @@ import {
   createUserWithEmailAndPassword,
   GoogleAuthProvider,
   signInWithPopup,
+  GithubAuthProvider ,
 } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-auth.js";
 import { auth } from "./config.js";
 
@@ -64,5 +65,10 @@ goggle_btn.addEventListener("click", () => {
 
 // Github Button Work:
 
+const github_btn = document.querySelector('#github-btn');
+
+github_btn.addEventListener('click' , ()=>{
+
+})
 
 
