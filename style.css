@@ -6,6 +6,7 @@
 
 body {
   background-color: rgb(134, 134, 134);
+  background: linear-gradient(to right, #b8a0a0, #775555, #696969, #5f0000);
 }
 
 /* Home page form  */
@@ -66,7 +67,7 @@ body {
   font-family: Helvetica, sans-serif;
   color: yellow;
   list-style-type: disc;
-  border: 4px groove #d80000;
+  border: 4px groove #e20026;
 }
 
 /* Home page logout button */
