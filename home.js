@@ -1,10 +1,11 @@
 
-import { getAuth, onAuthStateChanged , signOut , getFirestore ,initializeApp , collection, addDoc } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-auth.js";
-import { auth } from "./config.js";
+import { getAuth, onAuthStateChanged , signOut} from "https://www.gstatic.com/firebasejs/10.12.4/firebase-auth.js";
+import { auth , db} from "./config.js";
 
- 
+import { collection, addDoc } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-firestore-compat.js"; 
 
 
+// When user login:
 onAuthStateChanged(auth, (user) => {
   if (user) {
     const uid = user.uid;
@@ -43,20 +44,20 @@ const todo_arr = [{}];
 
 const db = getFirestore(app);
 
-form_todo.addEventListener('submit' , async(events)=>{
+form_todo.addEventListener('submit' ,(events)=>{
   events.preventDefault();
   console.log(todos.value);
 
-  try {
-    const docRef = await addDoc(collection(db, "todos"), {
-      first: "Ada",
-      last: "Lovelace",
-      born: 1815
-    });
-    console.log("Document written with ID: ", docRef.id);
-  } catch (e) {
-    console.error("Error adding document: ", e);
-  }
+  // try {
+  //   const docRef = await addDoc(collection(db, "todos"), {
+  //     first: "Ada",
+  //     last: "Lovelace",
+  //     born: 1815
+  //   });
+  //   console.log("Document written with ID: ", docRef.id);
+  // } catch (e) {
+  //   console.error("Error adding document: ", e);
+  // }
   todo_arr.push(todos.value)
   renderdata();
 });
