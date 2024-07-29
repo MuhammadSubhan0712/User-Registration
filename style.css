@@ -58,6 +58,10 @@ body {
   color: blue;
   cursor: pointer;
 }
+#form-todo button:active {
+    color: #fff;
+  background-color: #5f0000;
+  }
 
 /* Home page UL  */
 
