@@ -6,13 +6,13 @@
 
 
 body{
-background-color: rgb(212, 212, 212)
+background-color: rgb(134, 134, 134)
 }
 
 
 /* Home page form  */
 #form-todo h1{
-    color: rgb(71, 58, 58);
+    color: #fff;
     text-align: center;
     padding: 10px;
     font-weight: bold;
@@ -21,14 +21,14 @@ background-color: rgb(212, 212, 212)
     margin: 40px 0 ;
 }
 #form-todo{
-background-color: lightgray;
+background-color: maroon;
    position: absolute;
    top: 50%;
    left: 50%;
    transform: translate(-50% ,  -50%);
    width: auto ;
    height: auto;
-   box-shadow: 2px 4px 6px rgb(230, 255, 1)
+   box-shadow: 3px 5px 7px yellow
 }
 
 #form-todo input{
@@ -66,9 +66,9 @@ transition: 0.2s ease-in-out;
     font-size: 20px;
     font-weight: bold ;
     font-family: Helvetica, sans-serif ;
-    color:rgb(193, 255, 99);
+    color:yellow;
     list-style-type: disc;
-    border: 4px groove #333;
+    border: 4px groove #d80000;
 }
 
 

@@ -40,11 +40,7 @@ const todos = document.querySelector('#todo');
 
 const display = document.querySelector('#ul');
 
-const todo_arr = [{}];
-
-const db = getFirestore(app);
-
-
+const todo_arr = [];
 
 
 // Function to render todo data on the browser.
@@ -58,7 +54,6 @@ todo_arr.map((items)=>{
 display.innerHTML += `<li>${items.todo}</li>`;
 })
 }
-
 
 
 form_todo.addEventListener('submit' ,async(events)=>{
