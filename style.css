@@ -9,9 +9,10 @@ body{
 background-color: rgb(212, 212, 212)
 }
 
-/* Home page heading  */
-#home-h1{
-    color: rgb(0, 0, 0);
+
+/* Home page form  */
+#form-todo h1{
+    color: rgb(236, 236, 203);
     text-align: center;
     padding: 10px;
     font-weight: bold;
@@ -19,8 +20,6 @@ background-color: rgb(212, 212, 212)
     text-transform: uppercase;
     margin: 40px 0 ;
 }
-
-/* Home page form  */
 #form-todo{
 background-color: gray;
    position: absolute;
@@ -32,6 +31,34 @@ background-color: gray;
    box-shadow: 2px 4px 6px rgba(187, 255, 0, 0.863)
 }
 
+#form-todo input{
+    font-family: 'Times New Roman', Times, serif;
+ font-size: 16px;
+ padding: 15px 10px;
+width: 100%;
+border: 1px solid black;
+border-radius: 5px ;
+outline: none;
+box-shadow: 1px 3px 4px rgba(250, 255, 241, 0.863)
+}
+
+#form-todo button{
+font-size: 18px;
+font-weight: bold;
+margin: 20px 0 ;
+padding: 10px 15px;
+width: 100%;
+border: 0;
+border-radius: 5px;
+background-color: #fff;
+transition: 0.2s ease-in-out;
+}
+
+#form-todo button:hover{
+    transition: 0.2s ease-in-out;
+    color: blue;
+    cursor: pointer;
+}
 
 /* Home page UL  */
 
