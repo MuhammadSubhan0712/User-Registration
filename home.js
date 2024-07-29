@@ -44,29 +44,37 @@ const todo_arr = [{}];
 
 const db = getFirestore(app);
 
-form_todo.addEventListener('submit' ,(events)=>{
+
+
+
+// Function to render todo data on the browser.
+function renderdata(){
+  display.innerHTML = "";
+  if (todo_arr.length === 0) {
+    display.innerHTML = `No data found`;
+    return;
+  }
+todo_arr.map((items)=>{
+display.innerHTML += `<li>${items.todo}</li>`;
+})
+}
+
+
+
+form_todo.addEventListener('submit' ,async(events)=>{
   events.preventDefault();
-  
   todo_arr.push ({
     todo : todos.value,
   });
-
-  // try {
-  //   const docRef = await addDoc(collection(db, "todos"), {
-  //     first: "Ada",
-  //     last: "Lovelace",
-  //     born: 1815
-  //   });
-  //   console.log("Document written with ID: ", docRef.id);
-  // } catch (e) {
-  //   console.error("Error adding document: ", e);
-  // }
-
   renderdata();
+
+  try {
+    const docRef = await addDoc(collection(db, "todos"), {
+      todo : todos.value,
+    });
+    console.log("Document written with ID: ", docRef.id);
+  } catch (e) {
+    console.error("Error adding document: ", e);
+  }
 });
 
-
-function renderdata(){
-  display.innerHTML = "";
-display.innerHTML += `<li>${todo_arr}</li>`;
-}
