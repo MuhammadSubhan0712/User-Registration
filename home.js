@@ -3,7 +3,6 @@ import { getAuth, onAuthStateChanged , signOut } from "https://www.gstatic.com/f
 import { auth } from "./config.js";
 
 
-const auth = getAuth();
 onAuthStateChanged(auth, (user) => {
   if (user) {
     const uid = user.uid;
@@ -35,3 +34,12 @@ signOut(auth).then(() => {
 const form_todo = document.querySelector('#form');
 
 const todos = document.querySelector('#todo');
+
+const display = document.querySelector('#ul');
+
+form_todo.addEventListener('submit' , (events)=>{
+  events.preventDefault();
+  console.log(todos.value);
+  display.innerHTML += `<li>${todos.value}</li>`
+  
+})
