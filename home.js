@@ -2,7 +2,7 @@
 import { getAuth, onAuthStateChanged , signOut} from "https://www.gstatic.com/firebasejs/10.12.4/firebase-auth.js";
 import { auth , db} from "./config.js";
 
-import { collection, addDoc } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-firestore-compat.js"; 
+import { collection, addDoc , getDocs } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-firestore.js"; 
 
 
 // When user login:
@@ -46,7 +46,10 @@ const db = getFirestore(app);
 
 form_todo.addEventListener('submit' ,(events)=>{
   events.preventDefault();
-  console.log(todos.value);
+  
+  todo_arr.push ({
+    todo : todos.value,
+  });
 
   // try {
   //   const docRef = await addDoc(collection(db, "todos"), {
@@ -58,11 +61,12 @@ form_todo.addEventListener('submit' ,(events)=>{
   // } catch (e) {
   //   console.error("Error adding document: ", e);
   // }
-  todo_arr.push(todos.value)
+
   renderdata();
 });
 
 
 function renderdata(){
+  display.innerHTML = "";
 display.innerHTML += `<li>${todo_arr}</li>`;
 }
