@@ -28,3 +28,10 @@ signOut(auth).then(() => {
   console.log(error);
 });
 })
+
+
+// To do Working starts here:
+
+const form_todo = document.querySelector('#form');
+
+const todos = document.querySelector('#todo');
