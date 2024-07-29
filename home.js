@@ -1,6 +1,8 @@
 
-import { getAuth, onAuthStateChanged , signOut } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-auth.js";
+import { getAuth, onAuthStateChanged , signOut , getFirestore ,initializeApp , collection, addDoc } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-auth.js";
 import { auth } from "./config.js";
+
+ 
 
 
 onAuthStateChanged(auth, (user) => {
@@ -37,9 +39,29 @@ const todos = document.querySelector('#todo');
 
 const display = document.querySelector('#ul');
 
-form_todo.addEventListener('submit' , (events)=>{
+const todo_arr = [{}];
+
+const db = getFirestore(app);
+
+form_todo.addEventListener('submit' , async(events)=>{
   events.preventDefault();
   console.log(todos.value);
-  display.innerHTML += `<li>${todos.value}</li>`
-  
-})
+
+  try {
+    const docRef = await addDoc(collection(db, "todos"), {
+      first: "Ada",
+      last: "Lovelace",
+      born: 1815
+    });
+    console.log("Document written with ID: ", docRef.id);
+  } catch (e) {
+    console.error("Error adding document: ", e);
+  }
+  todo_arr.push(todos.value)
+  renderdata();
+});
+
+
+function renderdata(){
+display.innerHTML += `<li>${todo_arr}</li>`;
+}
