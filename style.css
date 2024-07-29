@@ -5,7 +5,6 @@
 }
 
 body {
-  background-color: rgb(134, 134, 134);
   background: linear-gradient(to right, #b8a0a0, #775555, #696969, #5f0000);
 }
 
@@ -166,13 +165,15 @@ body {
 }
 
 #form a:hover {
-  color: rgb(3, 216, 3);
+  color: rgb(0, 131, 0);
   transition: 0.2s ease-in-out;
   cursor: pointer;
 }
-
+#form a:active{
+    background-color: lightgreen;
+}
 #div {
   font-size: 20px;
   text-align: center;
-  color: rgb(56, 56, 56);
+  color: wheat;
 }
