@@ -19,6 +19,20 @@ background-color: rgb(212, 212, 212)
     text-transform: uppercase;
     margin: 40px 0 ;
 }
+
+/* Home page form  */
+#form-todo{
+background-color: gray;
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50% ,  -50%);
+   width: auto ;
+   height: auto;
+   box-shadow: 2px 4px 6px rgba(187, 255, 0, 0.863)
+}
+
+
 /* Home page UL  */
 
 #ul{
@@ -27,8 +41,7 @@ background-color: rgb(212, 212, 212)
     font-family: Helvetica, sans-serif ;
     color:rgb(136, 226, 0);
     list-style-type: disc;
-    border: 2px solid #333;
-
+    border: 4px groove #333;
 }
 
 
