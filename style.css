@@ -1,180 +1,173 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-
-body{
-background-color: rgb(134, 134, 134)
+body {
+  background-color: rgb(134, 134, 134);
 }
-
 
 /* Home page form  */
-#form-todo h1{
-    color: #fff;
-    text-align: center;
-    padding: 10px;
-    font-weight: bold;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    text-transform: uppercase;
-    margin: 40px 0 ;
+#form-todo h1 {
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+  font-weight: bold;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  text-transform: uppercase;
+  margin: 40px 0;
 }
-#form-todo{
-background-color: maroon;
-   position: absolute;
-   top: 50%;
-   left: 50%;
-   transform: translate(-50% ,  -50%);
-   width: auto ;
-   height: auto;
-   box-shadow: 3px 5px 7px yellow
-}
-
-#form-todo input{
-    font-family: 'Times New Roman', Times, serif;
- font-size: 16px;
- padding: 15px 10px;
-width: 100%;
-border: 1px solid black;
-border-radius: 5px ;
-outline: none;
-box-shadow: 1px 3px 4px rgba(250, 255, 241, 0.863)
+#form-todo {
+  background-color: maroon;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: auto;
+  height: auto;
+  box-shadow: 3px 5px 7px yellow;
 }
 
-#form-todo button{
-font-size: 18px;
-font-weight: bold;
-margin: 20px 0 ;
-padding: 10px 15px;
-width: 100%;
-border: 0;
-border-radius: 5px;
-background-color: #fff;
-transition: 0.2s ease-in-out;
+#form-todo input {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 16px;
+  padding: 15px 10px;
+  width: 100%;
+  border: 1px solid black;
+  border-radius: 5px;
+  outline: none;
+  box-shadow: 1px 3px 4px rgba(250, 255, 241, 0.863);
 }
 
-#form-todo button:hover{
-    transition: 0.2s ease-in-out;
-    color: blue;
-    cursor: pointer;
+#form-todo button {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 20px 0;
+  padding: 10px 15px;
+  width: 100%;
+  border: 0;
+  border-radius: 5px;
+  background-color: #fff;
+  transition: 0.2s ease-in-out;
+}
+
+#form-todo button:hover {
+  transition: 0.2s ease-in-out;
+  color: blue;
+  cursor: pointer;
 }
 
 /* Home page UL  */
 
-#ul{
-    font-size: 20px;
-    font-weight: bold ;
-    font-family: Helvetica, sans-serif ;
-    color:yellow;
-    list-style-type: disc;
-    border: 4px groove #d80000;
+#ul {
+  font-size: 20px;
+  font-weight: bold;
+  font-family: Helvetica, sans-serif;
+  color: yellow;
+  list-style-type: disc;
+  border: 4px groove #d80000;
 }
-
 
 /* Home page logout button */
 
-#logout-btn{
-
-font-size: 18px;
-font-weight: bold;
-margin: 20px 0 ;
-padding: 10px 15px;
-width: 10%;
-border: 0;
-border-radius: 5px;
-background-color: #fff;
-transition: 0.2s ease-in-out;
+#logout-btn {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 20px 0;
+  padding: 10px 15px;
+  width: 10%;
+  border: 0;
+  border-radius: 5px;
+  background-color: #fff;
+  transition: 0.2s ease-in-out;
 }
 
-#logout-btn:hover{
-    transition: 0.2s ease-in-out;
-    color: blue;
-    cursor: pointer;
+#logout-btn:hover {
+  transition: 0.2s ease-in-out;
+  color: blue;
+  cursor: pointer;
 }
 
 /* -------------------------------------------------- */
 
 /* Form of login and register */
-#form h1{
-    color: rgb(236, 236, 203);
-    text-align: center;
-    padding: 10px;
-    font-weight: bold;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    text-transform: uppercase;
-    margin: 40px 0 ;
+#form h1 {
+  color: rgb(236, 236, 203);
+  text-align: center;
+  padding: 10px;
+  font-weight: bold;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  text-transform: uppercase;
+  margin: 40px 0;
 }
 
-#form{
-background-color: gray;
-   position: absolute;
-   top: 50%;
-   left: 50%;
-   transform: translate(-50% ,  -50%);
-   width: 500px ;
-   height: 450px;
-   box-shadow: 2px 4px 6px rgba(187, 255, 0, 0.863)
+#form {
+  background-color: gray;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  height: 450px;
+  box-shadow: 2px 4px 6px rgba(187, 255, 0, 0.863);
 }
 
-#form input{
-font-family: 'Times New Roman', Times, serif;
- font-size: 16px;
- padding: 15px 10px;
-width: 100%;
-border: 1px solid black;
-border-radius: 5px ;
-outline: none;
-box-shadow: 1px 3px 4px rgba(250, 255, 241, 0.863)
-
+#form input {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 16px;
+  padding: 15px 10px;
+  width: 100%;
+  border: 1px solid black;
+  border-radius: 5px;
+  outline: none;
+  box-shadow: 1px 3px 4px rgba(250, 255, 241, 0.863);
 }
 
-#form button{
-font-size: 18px;
-font-weight: bold;
-margin: 20px 0 ;
-padding: 10px 15px;
-width: 100%;
-border: 0;
-border-radius: 5px;
-background-color: #fff;
-transition: 0.2s ease-in-out;
+#form button {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 20px 0;
+  padding: 10px 15px;
+  width: 100%;
+  border: 0;
+  border-radius: 5px;
+  background-color: #fff;
+  transition: 0.2s ease-in-out;
 }
 
-#form button:hover{
-    transition: 0.2s ease-in-out;
-    color: blue;
-    cursor: pointer;
-
+#form button:hover {
+  transition: 0.2s ease-in-out;
+  color: blue;
+  cursor: pointer;
 }
 
-#form button:active{
-    color: white;
-    background-color: rgb(54, 54, 54);
+#form button:active {
+  color: white;
+  background-color: rgb(54, 54, 54);
 }
 
-#form a{
-font-size: 20px;
-font-weight: bold;
-margin-top: 20px;
-padding: 10px 15px;
-width: 50%;
-border: 0;
-border-radius: 5px;
-color: #fff;
-text-decoration: none;
-transition: 0.2s ease-in-out;
-
+#form a {
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 20px;
+  padding: 10px 15px;
+  width: 50%;
+  border: 0;
+  border-radius: 5px;
+  color: #fff;
+  text-decoration: none;
+  transition: 0.2s ease-in-out;
 }
 
-#form a:hover{
-color: rgb(3, 216, 3);
-transition: 0.2s ease-in-out;
-cursor: pointer;
+#form a:hover {
+  color: rgb(3, 216, 3);
+  transition: 0.2s ease-in-out;
+  cursor: pointer;
 }
 
-#div{
-    font-size: 20px;
-    text-align: center;
-    color: rgb(56, 56, 56);
+#div {
+  font-size: 20px;
+  text-align: center;
+  color: rgb(56, 56, 56);
 }
