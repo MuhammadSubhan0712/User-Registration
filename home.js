@@ -129,8 +129,8 @@ const editBtn = document.querySelectorAll('.Edit-btn');
 
 const deleteBtn = document.querySelectorAll('.Delete-btn');
 
-deleteBtn.forEach((btn , index) =>{
-btn.addEventListener('click' , async()=>{
+deleteBtn.forEach((btn , index) => {
+btn.addEventListener('click' , async () => {
   console.log(todo_arr[index]);
 
   await deleteDoc(doc(db, "todos", todo_arr[index].id));
