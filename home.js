@@ -120,4 +120,4 @@ const editBtn = document.querySelector('.Edit-btn');
 
 // Add Event listener for Delete Button:
 
-const DeleteBtn = document.querySelector('.Delete-btn');
+const deleteBtn = document.querySelector('.Delete-btn');

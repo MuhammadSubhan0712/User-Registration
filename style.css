@@ -73,6 +73,12 @@ body {
   border: 4px groove #e20026;
 }
 
+/* list edit and delete button */
+.Edit-btn{}
+
+.Delete-btn{}
+
+
 /* Home page logout button */
 
 #logout-btn {
