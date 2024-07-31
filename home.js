@@ -115,9 +115,16 @@ form_todo.addEventListener("submit", async (events) => {
 
 const editBtn = document.querySelector('.Edit-btn');
 
+editBtn.addEventListener('click' , ()=>{
+
+})
+
 
 // ---------------------------------------------------------
 
 // Add Event listener for Delete Button:
 
 const deleteBtn = document.querySelector('.Delete-btn');
+deleteBtn.addEventListener('click' , ()=>{
+
+})
