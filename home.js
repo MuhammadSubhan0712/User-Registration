@@ -63,8 +63,7 @@ const todo_arr = [];
 async function readdata() {
   const querySnapshot = await getDocs(collection(db, "todos"));
   querySnapshot.forEach((doc) => {
-    console.log(`${doc.id}`);
-    todo_arr.push(doc.data());
+    todo_arr.push({...doc.data() , id: doc.id});
   });
   console.log(todo_arr);
   renderdata();
@@ -95,37 +94,49 @@ function renderdata() {
 // Add Event listener todo form:
 form_todo.addEventListener("submit", async (events) => {
   events.preventDefault();
-  todo_arr.push({
-    todo: todos.value,
-  });
-  renderdata();
-
   try {
     const docRef = await addDoc(collection(db, "todos"), {
       todo: todos.value,
     });
     console.log("Document written with ID: ", docRef.id);
-  } catch (e) {
+    todo_arr.push({
+      todo: todos.value,
+      id: docRef.id,
+    });
+renderdata();
+todos.value = "";
+  } 
+  
+  catch (e) {
     console.error("Error adding document: ", e);
   }
 });
+
+
 
 // ---------------------------------------------------------
 
 // Add Event listener for Edit Button:
 
-const editBtn = document.querySelector('.Edit-btn');
+const editBtn = document.querySelectorAll('.Edit-btn');
 
-editBtn.addEventListener('click' , ()=>{
 
-})
 
 
 // ---------------------------------------------------------
 
-// Add Event listener for Delete Button:
+// Foreach Add Event listener for Delete Button:
 
-const deleteBtn = document.querySelector('.Delete-btn');
-deleteBtn.addEventListener('click' , ()=>{
+const deleteBtn = document.querySelectorAll('.Delete-btn');
 
-})
+deleteBtn.forEach((btn , index) =>{
+btn.addEventListener('click' , async()=>{
+  console.log(todo_arr[index]);
+
+  await deleteDoc(doc(db, "todos", todo_arr[index].id));
+  console.log("Data Deleted Successfully");
+  todo_arr.splice(index , 1);
+  renderdata();
+});
+});
+  
