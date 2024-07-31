@@ -3,7 +3,6 @@ import {
   onAuthStateChanged,
   signOut,
 } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-auth.js";
-import { auth, db } from "./config.js";
 
 import {
   collection,
@@ -11,8 +10,10 @@ import {
   getDocs,
   doc, 
   deleteDoc,
+  updateDoc ,
 } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-firestore.js";
 
+import { auth, db } from "./config.js";
 
 
 // When user login:
@@ -121,6 +122,20 @@ todos.value = "";
 
 const editBtn = document.querySelectorAll('.Edit-btn');
 
+editBtn.forEach((btn , index) =>{
+  btn.addEventListener("click" , async()=>{
+   const updatedval = prompt("Enter value to update");
+   const toUpdate = doc(db, "todos", todo_arr[index].id);
+
+await updateDoc(toUpdate, {
+  todos : updatedval,
+});
+console.log("Value has been Updated");
+todo_arr[index].todos = updatedval;
+renderdata();
+
+  });
+});
 
 
 
@@ -128,25 +143,17 @@ const editBtn = document.querySelectorAll('.Edit-btn');
 
 // Foreach Add Event listener for Delete Button:
 
-const deleteBtn = document.querySelectorAll('.Delete-btn');
+const deleteBtn = document.querySelectorAll(".Delete-btn");
 
 deleteBtn.forEach((btn , index) => {
-btn.addEventListener('click' , async () => {
-  console.log(todo_arr[index]);
+
+btn.addEventListener("click" , async () => {
 
   await deleteDoc(doc(db, "todos", todo_arr[index].id));
   console.log("Data Deleted Successfully");
+
   todo_arr.splice(index , 1);
   renderdata();
 });
 });
-  
-deleteBtn.forEach((btn, index) => {
-  btn.addEventListener("click", async () => {
-    console.log(arr[index]);
-    await deleteDoc(doc(db, "todos", arr[index].id));
-    console.log("Data deleted");
-    arr.splice(index, 1);
-    renderTodo();
-  });
-});
+ 
