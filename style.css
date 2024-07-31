@@ -27,6 +27,7 @@ body {
   width: auto;
   height: auto;
   box-shadow: 3px 5px 7px yellow;
+  border-radius: 10px;
 }
 
 #form-todo input {
@@ -71,6 +72,7 @@ body {
   color: yellow;
   list-style-type: disc;
   border: 4px groove #e20026;
+  border-radius: 5px;
 }
 
 /* list edit and delete button */
@@ -133,6 +135,7 @@ body {
   width: 500px;
   height: 450px;
   box-shadow: 2px 4px 6px rgba(187, 255, 0, 0.863);
+  border-radius: 5px;
 }
 
 #form input {
