@@ -80,7 +80,10 @@ function renderdata() {
     return;
   }
   todo_arr.map((items) => {
-    display.innerHTML += `<li>${items.todo}</li>`;
+    display.innerHTML += `<li>${items.todo}
+<button class="Edit-btn">Edit</button>
+<button class="Delete-btn">Delete</button>
+    </li>`;
   });
 }
 
@@ -105,3 +108,12 @@ form_todo.addEventListener("submit", async (events) => {
     console.error("Error adding document: ", e);
   }
 });
+
+// ---------------------------------------------------------
+
+// Add Event listener for Edit Button:
+
+
+// ---------------------------------------------------------
+
+// Add Event listener for Delete Button:
