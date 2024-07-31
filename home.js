@@ -116,7 +116,7 @@ todos.value = "";
 
 // ---------------------------------------------------------
 
-// Add Event listener for Edit Button:
+// Foreach Add Event listener for Edit Button:
 
 const editBtn = document.querySelectorAll('.Edit-btn');
 
@@ -140,3 +140,12 @@ btn.addEventListener('click' , async () => {
 });
 });
   
+deleteBtn.forEach((btn, index) => {
+  btn.addEventListener("click", async () => {
+    console.log(arr[index]);
+    await deleteDoc(doc(db, "todos", arr[index].id));
+    console.log("Data deleted");
+    arr.splice(index, 1);
+    renderTodo();
+  });
+});
