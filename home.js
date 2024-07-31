@@ -9,6 +9,8 @@ import {
   collection,
   addDoc,
   getDocs,
+  doc, 
+  deleteDoc,
 } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-firestore.js";
 
 
@@ -80,10 +82,9 @@ function renderdata() {
     return;
   }
   todo_arr.map((items) => {
-    display.innerHTML += `<li>${items.todo}
-<button class="Edit-btn">Edit</button>
-<button class="Delete-btn">Delete</button>
-    </li>`;
+    display.innerHTML += `<li>${items.todo}   <button class="Edit-btn">Edit</button>
+      <button class="Delete-btn" style="background-color: red; color: #fff;">Delete</button></li>
+    `;
   });
 }
 

@@ -74,14 +74,26 @@ body {
 }
 
 /* list edit and delete button */
-.Edit-btn{}
-
-.Delete-btn{}
-
+#ul button{
+  font-size: 15px;
+  font-weight: bold;
+  padding: 15px;
+  width: 15%;
+  border: 0;
+  border-radius: 8px;
+  background-color: blue;
+  color: #fff;
+  transition: 0.2s ease-in-out;
+}
+#ul button:hover {
+  transition: 0.2s ease-in-out;
+  color: rgb(1, 255, 1);
+  cursor: pointer;
+}
 
 /* Home page logout button */
 
-#logout-btn {
+#logout-btn  {
   font-size: 18px;
   font-weight: bold;
   margin: 20px 0;
