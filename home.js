@@ -113,7 +113,11 @@ form_todo.addEventListener("submit", async (events) => {
 
 // Add Event listener for Edit Button:
 
+const editBtn = document.querySelector('.Edit-btn');
+
 
 // ---------------------------------------------------------
 
 // Add Event listener for Delete Button:
+
+const DeleteBtn = document.querySelector('.Delete-btn');
