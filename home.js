@@ -103,7 +103,7 @@ const editBtn = document.querySelectorAll(".edit-btn");
 
 editBtn.forEach((btn , index) =>{
   btn.addEventListener("click" , async()=>{
-    
+
    const updatedval = prompt("Enter value to update");
    const toUpdate = doc(db, "todos", todo_arr[index].id);
 
@@ -136,7 +136,6 @@ btn.addEventListener("click" , async () => {
   renderdata();
 });
 });
- 
 }
 
 
