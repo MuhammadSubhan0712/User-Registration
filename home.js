@@ -11,6 +11,7 @@ import {
   doc, 
   deleteDoc,
   updateDoc ,
+  Timestamp,
 } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-firestore.js";
 
 import { auth, db } from "./config.js";
@@ -56,6 +57,8 @@ const todos = document.querySelector("#todo");
 
 const display = document.querySelector("#ul");
 
+const select =  document.querySelector("#select");
+
 const todo_arr = [];
 
 // ---------------------------------------------------------
@@ -84,55 +87,31 @@ function renderdata() {
     return;
   }
   todo_arr.map((items) => {
-    display.innerHTML += `<li>${items.todo}   <button class="Edit-btn">Edit</button>
-      <button class="Delete-btn" style="background-color: red; color: #fff;">Delete</button></li>
+    display.innerHTML += `
+     <li>${items.todo}   
+     <button class="edit-btn"> Edit </button>
+    <button class="delete-btn" style="background-color: red; color: #fff;"> Delete </button></li>
     `;
   });
-}
-
-
 
 // ---------------------------------------------------------
 
-// Add Event listener todo form:
-form_todo.addEventListener("submit", async (events) => {
-  events.preventDefault();
-  try {
-    const docRef = await addDoc(collection(db, "todos"), {
-      todo: todos.value,
-    });
-    console.log("Document written with ID: ", docRef.id);
-    todo_arr.push({
-      todo: todos.value,
-      id: docRef.id,
-    });
-renderdata();
-todos.value = "";
-  } 
   
-  catch (e) {
-    console.error("Error adding document: ", e);
-  }
-});
-
-
-
-// ---------------------------------------------------------
-
 // Foreach Add Event listener for Edit Button:
 
-const editBtn = document.querySelectorAll('.Edit-btn');
+const editBtn = document.querySelectorAll(".edit-btn");
 
 editBtn.forEach((btn , index) =>{
   btn.addEventListener("click" , async()=>{
+    
    const updatedval = prompt("Enter value to update");
    const toUpdate = doc(db, "todos", todo_arr[index].id);
 
 await updateDoc(toUpdate, {
-  todos : updatedval,
+  todo : updatedval,
 });
 console.log("Value has been Updated");
-todo_arr[index].todos = updatedval;
+todo_arr[index].todo = updatedval;
 renderdata();
 
   });
@@ -144,7 +123,7 @@ renderdata();
 
 // Foreach Add Event listener for Delete Button:
 
-const deleteBtn = document.querySelectorAll(".Delete-btn");
+const deleteBtn = document.querySelectorAll(".delete-btn");
 
 deleteBtn.forEach((btn , index) => {
 
@@ -158,3 +137,35 @@ btn.addEventListener("click" , async () => {
 });
 });
  
+}
+
+
+// ---------------------------------------------------------
+
+// Add Event listener todo form:
+form_todo.addEventListener("submit", async (events) => {
+  events.preventDefault();
+  try {
+    const docRef = await addDoc(collection(db, "todos"), {
+      todo: todos.value,
+      Designation: select.value,
+      Date: Timestamp.fromDate(new Date()),
+    });
+    console.log("Document written with ID: ", docRef.id);
+    
+    todo_arr.push({
+      todo: todos.value,
+      id: docRef.id,
+      Designation: select.value,
+    });
+renderdata();
+todos.value = "";
+  } 
+  catch (e) {
+    console.error("Error adding document: ", e);
+  }
+});
+
+
+
+// ---------------------------------------------------------
