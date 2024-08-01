@@ -88,7 +88,7 @@ function renderdata() {
   }
   todo_arr.map((items) => {
     display.innerHTML += `
-     <li>${items.todo}   
+    <li>${items.todo}   
      <button class="edit-btn"> Edit </button>
     <button class="delete-btn" style="background-color: red; color: #fff;"> Delete </button></li>
     `;
@@ -103,7 +103,6 @@ const editBtn = document.querySelectorAll(".edit-btn");
 
 editBtn.forEach((btn , index) =>{
   btn.addEventListener("click" , async()=>{
-
    const updatedval = prompt("Enter value to update");
    const toUpdate = doc(db, "todos", todo_arr[index].id);
 
@@ -113,6 +112,7 @@ await updateDoc(toUpdate, {
 console.log("Value has been Updated");
 todo_arr[index].todo = updatedval;
 renderdata();
+
   });
 });
 
@@ -135,6 +135,7 @@ btn.addEventListener("click" , async () => {
   renderdata();
 });
 });
+ 
 }
 
 
