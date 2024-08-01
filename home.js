@@ -73,7 +73,6 @@ async function readdata() {
   console.log(todo_arr);
   renderdata();
 }
-
 readdata();
 // ---------------------------------------------------------
 
@@ -148,10 +147,10 @@ form_todo.addEventListener("submit", async (events) => {
     const docRef = await addDoc(collection(db, "todos"), {
       todo: todos.value,
       Designation: select.value,
-      Date: Timestamp.fromDate(new Date()),
+      time: Timestamp.fromDate(new Date()),
     });
-    console.log("Document written with ID: ", docRef.id);
-    
+    console.log("Document written with ID: ", docRef.id)
+
     todo_arr.push({
       todo: todos.value,
       id: docRef.id,
@@ -159,12 +158,10 @@ form_todo.addEventListener("submit", async (events) => {
     });
 renderdata();
 todos.value = "";
-  } 
-  catch (e) {
+  } catch (e) {
     console.error("Error adding document: ", e);
   }
 });
-
 
 
 // ---------------------------------------------------------
