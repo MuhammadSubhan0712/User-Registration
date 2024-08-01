@@ -113,7 +113,6 @@ await updateDoc(toUpdate, {
 console.log("Value has been Updated");
 todo_arr[index].todo = updatedval;
 renderdata();
-
   });
 });
 
