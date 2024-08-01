@@ -64,6 +64,36 @@ body {
   }
 
   /* Select in form field */
+#select
+{   width: 100%;
+    padding: 12px 16px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    color: #333;
+    background-color: #fff;
+    border: 3px groove #ccc;
+    border-radius: 7px;
+    appearance: none;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+#select::after {
+  content: '▼';
+  font-size: 12px;
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+#select:hover,
+#select:focus {
+
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    outline: none;
+}
 
 /* Home page UL  */
 

@@ -150,7 +150,6 @@ form_todo.addEventListener("submit", async (events) => {
       time: Timestamp.fromDate(new Date()),
     });
     console.log("Document written with ID: ", docRef.id)
-
     todo_arr.push({
       todo: todos.value,
       id: docRef.id,
