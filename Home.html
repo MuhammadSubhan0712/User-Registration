@@ -1,46 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <form id="form-todo">
+      <h1>+=+=+= TO-DO$ +=+=+=</h1>
 
-</head>
-<body>
+      <input id="todo" type="text" placeholder="Enter To do" minlength="4" />
 
-<form id="form-todo">
-    <h1>+=+=+= TO-DO$  +=+=+= </h1>
-
-    <input id="todo" type="text" placeholder="Enter To do" minlength="4">
-
-    <select  id="select">
+      <select id="select">
         <option value="Student">Student</option>
         <option value="Bussinessman">Bussinessman</option>
         <option value="Employee">Employee</option>
         <option value="Teacher">Teacher</option>
-        <option value="Other">Other</option> 
-    </select>
-    <button>
-        Add Todo
-       </button>
-<div id="des-div">
-       <button id="des-btn">Student</button>
-       <button id="des-btn">Bussinessman</button>
-       <button id="des-btn">Employee</button>
-       <button id="des-btn">Teacher</button>
-       <button id="des-btn">Other</button>
-</div>
-    <ul id="ul">
-   
-    </ul>
-</form>
+        <option value="Other">Other</option>
+      </select>
 
-<button id="logout-btn" >
-Logout
-</button>
+      <button>Add Todo</button>
 
+      <div id="des-div">
+
+        <button id="des-btn">Student</button>
+        <button id="des-btn">Bussinessman</button>
+        <button id="des-btn">Employee</button>
+        <button id="des-btn">Teacher</button>
+        <button id="des-btn">Other</button>
+
+      </div>
+
+      <ul id="ul"></ul>
+    
+    </form>
+
+    <button id="logout-btn">Logout</button>
 
     <script type="module" src="home.js"></script>
-</body>
+  </body>
 </html>
