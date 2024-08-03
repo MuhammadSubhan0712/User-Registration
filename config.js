@@ -6,7 +6,6 @@ import { getAuth } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-aut
 import { getFirestore } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-firestore.js";
 
 
-
 const firebaseConfig = {
   apiKey: "AIzaSyAQTyRrGzF5A832HR1DcA2TC52YyMwWTcA",
   authDomain: "user-registration-f2a23.firebaseapp.com",
