@@ -53,7 +53,7 @@ logout.addEventListener("click", () => {
 // ---------------------------------------------------------
 
 
-// To do Working starts here:
+// To do Code starts here:
 
 const form_todo = document.querySelector("#form-todo");
 
@@ -71,6 +71,7 @@ const todo_arr = [];
 // Designation button Query work:
 
 const des_btn = document.querySelectorAll('#des-btn');
+const All_btn = document.querySelector("All-btn");
 des_btn.forEach((btn)=>{
   btn.addEventListener("click" , async(event) =>{
    todo_arr = [];
@@ -78,7 +79,7 @@ des_btn.forEach((btn)=>{
 
    const todosRef = collection(db, "todos");
 
-const q = query(todosRef, where("Designation", "==", "event.target.innerHTML"), );
+const q = query(todosRef, where("Designation", "==", "event.target.innerHTML"), orderBy ("time" , "desc"));
 
 const querySnapshot = await getDocs(q);
   querySnapshot.forEach((doc) => {
