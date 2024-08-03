@@ -71,15 +71,14 @@ const todo_arr = [];
 // Designation button Query work:
 
 const des_btn = document.querySelectorAll('#des-btn');
-const All_btn = document.querySelector("All-btn");
 des_btn.forEach((btn)=>{
   btn.addEventListener("click" , async(event) =>{
-   todo_arr = [];
+   todo_arr = []
    console.log(event.target.innerHTML);
 
    const todosRef = collection(db, "todos");
 
-const q = query(todosRef, where("Designation", "==", "event.target.innerHTML"), orderBy ("time" , "desc"));
+const q = query(todosRef, where("Designation", "==", event.target.innerHTML), orderBy ("time" , "desc"));
 
 const querySnapshot = await getDocs(q);
   querySnapshot.forEach((doc) => {
@@ -87,9 +86,13 @@ const querySnapshot = await getDocs(q);
   });
   console.log(todo_arr);
   renderdata();
+  });
+});
 
-  })
-})
+
+
+// To render all the data:
+const All_btn = document.querySelector("#All-btn");
 
 All_btn.addEventListener("click" , readdata());
 
