@@ -141,6 +141,23 @@ btn.addEventListener("click" , async () => {
 
 // ---------------------------------------------------------
 
+// Designation button work
+
+constc= document.querySelectorAll('#des-btn');
+
+ des_btn.addEventListener("click" , ()=>{
+  const des_Ref = collection(db, "todos");
+const q = query(des_Ref, where("select", "==", " des_btn.innerHTML"));
+readdata();
+ })
+
+
+
+
+
+// ---------------------------------------------------------
+
+
 // Add Event listener todo form:
 form_todo.addEventListener("submit", async (events) => {
   events.preventDefault();
