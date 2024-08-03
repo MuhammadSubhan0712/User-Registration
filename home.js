@@ -66,6 +66,22 @@ const todo_arr = [];
 // ---------------------------------------------------------
 
 
+// Designation button work
+
+const des_btn = document.querySelectorAll('#des-btn');
+des_btn.forEach((btn , ))
+ btn.addEventListener("click" , ()=>{
+  const des_Ref = collection(db, "todos");
+const q = query(des_Ref, where("select", "==", "des_btn.innerHTML"));
+readdata();
+ })
+
+
+
+
+// ---------------------------------------------------------
+
+
 // Asynchronous Function to read the data:
 async function readdata() {
   const querySnapshot = await getDocs(collection(db, "todos"));
@@ -138,22 +154,6 @@ btn.addEventListener("click" , async () => {
 });
  
 }
-
-// ---------------------------------------------------------
-
-// Designation button work
-
-constc= document.querySelectorAll('#des-btn');
-
- des_btn.addEventListener("click" , ()=>{
-  const des_Ref = collection(db, "todos");
-const q = query(des_Ref, where("select", "==", " des_btn.innerHTML"));
-readdata();
- })
-
-
-
-
 
 // ---------------------------------------------------------
 
