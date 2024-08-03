@@ -91,7 +91,7 @@ const querySnapshot = await getDocs(q);
   })
 })
 
-
+All_btn.addEventListener("click" , readdata());
 
 
 // ---------------------------------------------------------
