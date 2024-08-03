@@ -242,3 +242,54 @@ body {
   text-align: center;
   color: wheat;
 }
+
+
+
+/* Media Queries */
+
+/* For Tablets */
+@media (max-width: 768px) {
+  #form {
+    width: 90%;
+    height: auto;
+  }
+
+  #form-todo {
+    width: 90%;
+    height: auto;
+  }
+}
+
+
+/* For Mobile Devices */
+@media (max-width: 480px) {
+  #form {
+    width: 95%;
+    height: auto;
+  }
+
+  #form-todo {
+    width: 95%;
+    height: auto;
+  }
+
+  #form-todo h1,
+  #form h1 {
+    font-size: 18px;
+    margin: 20px 0;
+  }
+
+  #form input,
+  #form-todo input,
+  #form button,
+  #form-todo button,
+  #select {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  #form a {
+    font-size: 16px;
+    padding: 8px 12px;
+  }
+}
