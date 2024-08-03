@@ -12,6 +12,8 @@ import {
   deleteDoc,
   updateDoc ,
   Timestamp,
+  query,
+  where,
 } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-firestore.js";
 
 import { auth, db } from "./config.js";
