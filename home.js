@@ -63,17 +63,18 @@ const display = document.querySelector("#ul");
 
 const select =  document.querySelector("#select");
 
-const todo_arr = [];
+let todo_arr = [];
 
 // ---------------------------------------------------------
 
 
 // Designation button Query work:
 
-const des_btn = document.querySelectorAll('#des-btn');
+const des_btn = document.querySelectorAll("#des-btn");
+
 des_btn.forEach((btn)=>{
   btn.addEventListener("click" , async(event) =>{
-   todo_arr = []
+   todo_arr = [];
    console.log(event.target.innerHTML);
 
    const todosRef = collection(db, "todos");
