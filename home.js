@@ -66,15 +66,27 @@ const todo_arr = [];
 // ---------------------------------------------------------
 
 
-// Designation button work
+// Designation button Query work:
 
 const des_btn = document.querySelectorAll('#des-btn');
-des_btn.forEach((btn , ))
- btn.addEventListener("click" , ()=>{
-  const des_Ref = collection(db, "todos");
-const q = query(des_Ref, where("select", "==", "des_btn.innerHTML"));
-readdata();
- })
+des_btn.forEach((btn)=>{
+  btn.addEventListener("click" , async(event) =>{
+   todo_arr = [];
+   console.log(event.target.innerHTML);
+
+   const todosRef = collection(db, "todos");
+
+const q = query(todosRef, where("Designation", "==", "event.target.innerHTML"));
+
+const querySnapshot = await getDocs(collection(db, "todos"));
+  querySnapshot.forEach((doc) => {
+    todo_arr.push({...doc.data() , id: doc.id});
+  });
+  console.log(todo_arr);
+  renderdata();
+
+  })
+})
 
 
 
