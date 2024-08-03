@@ -14,6 +14,8 @@ import {
   Timestamp,
   query,
   where,
+  orderBy, 
+  limit,
 } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-firestore.js";
 
 import { auth, db } from "./config.js";
@@ -76,9 +78,9 @@ des_btn.forEach((btn)=>{
 
    const todosRef = collection(db, "todos");
 
-const q = query(todosRef, where("Designation", "==", "event.target.innerHTML"));
+const q = query(todosRef, where("Designation", "==", "event.target.innerHTML"), );
 
-const querySnapshot = await getDocs(collection(db, "todos"));
+const querySnapshot = await getDocs(q);
   querySnapshot.forEach((doc) => {
     todo_arr.push({...doc.data() , id: doc.id});
   });
