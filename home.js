@@ -15,7 +15,6 @@ import {
   query,
   where,
   orderBy, 
-  limit,
 } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-firestore.js";
 
 import { auth, db } from "./config.js";
@@ -103,14 +102,19 @@ All_btn.addEventListener("click" , readdata());
 
 // Asynchronous Function to read the data:
 async function readdata() {
-  const querySnapshot = await getDocs(collection(db, "todos"));
+  todo_arr = [];
+  const q = query(collection(db , "todos") , orderBy ("time" , "desc"));
+  const querySnapshot = await getDocs(q);
   querySnapshot.forEach((doc) => {
-    todo_arr.push({...doc.data() , id: doc.id});
+    todo_arr.push({ ...doc.data() , id: doc.id });
   });
   console.log(todo_arr);
   renderdata();
 }
+
+
 readdata();
+
 // ---------------------------------------------------------
 
 
@@ -119,14 +123,17 @@ readdata();
 function renderdata() {
   display.innerHTML = "";
   if (todo_arr.length === 0) {
-    display.innerHTML = `No data found`;
+    display.innerHTML = "No data found";
     return;
   }
   todo_arr.map((items) => {
-    display.innerHTML += `
+    display.innerHTML +=`
     <li>${items.todo}   
-     <button class="edit-btn"> Edit </button>
-    <button class="delete-btn" style="background-color: red; color: #fff;"> Delete </button></li>
+    <button class = "edit-btn"> Edit </button>
+    <button class = "delete-btn" style="background-color: red; color: #fff;"> Delete </button>
+    </li>
+    <p> ${items.time ? items.time.toDate() : "no time"}</p>
+    </hr>
     `;
   });
 
@@ -138,7 +145,7 @@ function renderdata() {
 const editBtn = document.querySelectorAll(".edit-btn");
 
 editBtn.forEach((btn , index) =>{
-  btn.addEventListener("click" , async()=>{
+  btn.addEventListener("click" , async () => {
    const updatedval = prompt("Enter value to update");
    const toUpdate = doc(db, "todos", todo_arr[index].id);
 
@@ -178,21 +185,26 @@ btn.addEventListener("click" , async () => {
 
 
 // Add Event listener todo form:
-form_todo.addEventListener("submit", async (events) => {
-  events.preventDefault();
+form_todo.addEventListener("submit", async (event) => {
+  event.preventDefault();
+
   try {
     const docRef = await addDoc(collection(db, "todos"), {
       todo: todos.value,
       Designation: select.value,
       time: Timestamp.fromDate(new Date()),
     });
+
     console.log("Document written with ID: ", docRef.id)
     todo_arr.push({
       todo: todos.value,
       id: docRef.id,
       Designation: select.value,
+      time: Timestamp.fromDate(new Date()),
     });
+
 renderdata();
+
 todos.value = "";
   } catch (e) {
     console.error("Error adding document: ", e);
